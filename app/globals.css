@@ -1,0 +1,152 @@
+@import "tailwindcss";
+
+@theme {
+  /* ARKA Design System — Luxury Institutional 3D */
+  --color-arka-black:     #030509;
+  --color-arka-card:      #080B10;
+  --color-arka-elevated:  #0D1118;
+  --color-arka-container: #131821;
+  --color-arka-border:    #0B2745;
+  --color-arka-midnight:  #071A2F;
+  --color-arka-green-dark: #004C45;
+  --color-arka-turquoise: #00BAB3;
+  --color-arka-champagne: #C8A96A;
+  --color-arka-white:     #F4F7FA;
+  --color-arka-gray:      #8A94A6;
+  --color-arka-error:     #FF6B6B;
+
+  --font-sans:    var(--font-inter), Inter, ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-montserrat), Montserrat, ui-sans-serif, system-ui, sans-serif;
+  --font-mono:    var(--font-jetbrains), 'JetBrains Mono', ui-monospace, monospace;
+
+  --radius-sm:  0.125rem;
+  --radius:     0.25rem;
+  --radius-md:  0.375rem;
+  --radius-lg:  0.5rem;
+  --radius-xl:  0.75rem;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #030509;
+  color: #F4F7FA;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: var(--font-sans);
+}
+
+/* Luxury gradient text */
+.text-gradient {
+  background: linear-gradient(135deg, #00BAB3 0%, #C8A96A 60%, #F4F7FA 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-teal {
+  background: linear-gradient(135deg, #00BAB3 0%, #00d4cc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glass morphism */
+.glass {
+  background: rgba(8, 11, 16, 0.75);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(0, 186, 179, 0.12);
+}
+
+.glass-light {
+  background: rgba(13, 17, 24, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+/* Turquoise glow */
+.glow-teal {
+  box-shadow:
+    0 0 20px rgba(0, 186, 179, 0.25),
+    0 0 60px rgba(0, 186, 179, 0.1),
+    0 4px 24px rgba(0, 0, 0, 0.4);
+}
+
+.glow-teal-sm {
+  box-shadow: 0 0 16px rgba(0, 186, 179, 0.3), 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.glow-champagne {
+  box-shadow: 0 0 20px rgba(200, 169, 106, 0.2), 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* 3D card hover effect */
+.card-3d {
+  transition: transform 0.4s cubic-bezier(0.25, 0.4, 0.25, 1), box-shadow 0.4s ease;
+  transform-style: preserve-3d;
+}
+
+.card-3d:hover {
+  transform: perspective(1000px) rotateX(-3deg) rotateY(4deg) translateY(-4px);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.5),
+    0 0 30px rgba(0, 186, 179, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+/* Luxury border with glow */
+.border-glow {
+  border: 1px solid rgba(0, 186, 179, 0.2);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03), 0 0 0 1px rgba(0, 186, 179, 0.05);
+}
+
+/* Floating animation */
+@keyframes float-up {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes float-down {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(10px); }
+}
+
+@keyframes slow-spin {
+  0% { transform: rotateY(0deg) rotateX(0deg); }
+  25% { transform: rotateY(8deg) rotateX(-3deg); }
+  50% { transform: rotateY(0deg) rotateX(0deg); }
+  75% { transform: rotateY(-8deg) rotateX(3deg); }
+  100% { transform: rotateY(0deg) rotateX(0deg); }
+}
+
+@keyframes glow-breathe {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.animate-float-up   { animation: float-up   5s ease-in-out infinite; }
+.animate-float-down { animation: float-down 7s ease-in-out infinite; }
+.animate-glow-breathe { animation: glow-breathe 4s ease-in-out infinite; }
+
+/* Display font class */
+.font-display {
+  font-family: var(--font-display);
+}
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #030509; }
+::-webkit-scrollbar-thumb { background: rgba(0,186,179,0.3); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: #00BAB3; }

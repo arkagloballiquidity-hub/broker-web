@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="#00BAB3">
+  <!-- Left arm -->
+  <polygon points="49,7 3,86 18,86 46,38"/>
+  <!-- Right arm -->
+  <polygon points="51,7 97,86 82,86 54,38"/>
+  <!-- Center triangle (crossbar) -->
+  <polygon points="50,56 63,80 37,80"/>
+</svg>
