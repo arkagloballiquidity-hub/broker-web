@@ -76,7 +76,7 @@ export default function ChatWidget() {
       {/* Chat window */}
       {open && (
         <div
-          className="fixed bottom-24 right-5 z-50 flex flex-col rounded-2xl overflow-hidden shadow-2xl"
+          className="fixed bottom-24 right-5 lg:bottom-32 lg:right-8 z-50 flex flex-col rounded-2xl overflow-hidden shadow-2xl"
           style={{
             width: "360px",
             height: "520px",
@@ -251,7 +251,7 @@ export default function ChatWidget() {
       {/* Floating button */}
       <button
         onClick={() => setOpen(o => !o)}
-        className="fixed bottom-5 right-5 z-50 w-14 h-14 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110"
+        className="fixed bottom-5 right-5 lg:bottom-10 lg:right-8 z-50 w-14 h-14 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110"
         style={{
           background: open ? "#080B10" : "#00BAB3",
           border: open ? "1px solid rgba(0,186,179,0.4)" : "none",
