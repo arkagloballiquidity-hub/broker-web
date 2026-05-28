@@ -24,10 +24,12 @@ export default function ContactForm({ lang = "en" }: { lang?: "en" | "es" }) {
       name:        "Full Name",
       email:       "Email Address",
       inquiry:     "Inquiry Type",
+      phone:       "Phone / WhatsApp",
       country:     "Country of Residence",
       message:     "Message",
       namePh:      "John Smith",
       emailPh:     "you@example.com",
+      phonePh:     "+1 234 567 8900",
       countryPh:   "e.g. Colombia, Brazil, UAE...",
       messagePh:   "Describe your inquiry...",
       disclaimer:  "By submitting this form you confirm that you have read the Risk Warning and understand that trading involves significant risk of loss. ARKA does not accept clients from the United States.",
@@ -45,10 +47,12 @@ export default function ContactForm({ lang = "en" }: { lang?: "en" | "es" }) {
       name:        "Nombre Completo",
       email:       "Correo Electrónico",
       inquiry:     "Tipo de Consulta",
+      phone:       "Teléfono / WhatsApp",
       country:     "País de Residencia",
       message:     "Mensaje",
       namePh:      "Juan García",
       emailPh:     "tu@correo.com",
+      phonePh:     "+52 55 1234 5678",
       countryPh:   "Ej. Colombia, México, Argentina...",
       messagePh:   "Describe tu consulta...",
       disclaimer:  "Al enviar este formulario confirmas que has leído el Aviso de Riesgo y entiendes que el trading implica un riesgo significativo de pérdida. ARKA no acepta clientes de Estados Unidos.",
@@ -168,6 +172,18 @@ export default function ContactForm({ lang = "en" }: { lang?: "en" | "es" }) {
               className="w-full bg-arka-elevated border border-arka-border rounded px-4 py-3 text-arka-white text-sm placeholder:text-arka-gray/40 focus:outline-none focus:border-arka-turquoise/60 transition-colors"
             />
           </div>
+        </div>
+
+        <div>
+          <label className="block text-arka-gray font-mono text-[10px] tracking-wider uppercase mb-2">
+            {t.phone}
+          </label>
+          <input
+            type="tel"
+            name="phone"
+            placeholder={t.phonePh}
+            className="w-full bg-arka-elevated border border-arka-border rounded px-4 py-3 text-arka-white text-sm placeholder:text-arka-gray/40 focus:outline-none focus:border-arka-turquoise/60 transition-colors"
+          />
         </div>
 
         <div>
