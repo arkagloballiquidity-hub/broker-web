@@ -31,3 +31,7 @@ Thumbs.db
 # TypeScript
 *.tsbuildinfo
 next-env.d.ts
+.vercel
+
+# Claude internal files
+.claude/
