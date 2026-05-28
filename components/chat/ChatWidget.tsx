@@ -2,6 +2,8 @@
 
 import { useState, useRef, useEffect } from "react";
 import { MessageCircle, X, Send, Loader2, Bot } from "lucide-react";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 interface Message {
   role: "user" | "assistant";
@@ -117,12 +119,13 @@ export default function ChatWidget() {
                   </div>
                 )}
                 <div
-                  className="max-w-[82%] rounded-2xl px-3.5 py-2.5 text-sm leading-relaxed whitespace-pre-wrap"
+                  className="max-w-[82%] rounded-2xl px-3.5 py-2.5 text-sm leading-relaxed"
                   style={msg.role === "user" ? {
                     background: "#00BAB3",
                     color: "#080B10",
                     borderBottomRightRadius: "4px",
                     fontWeight: 500,
+                    whiteSpace: "pre-wrap",
                   } : {
                     background: "rgba(255,255,255,0.05)",
                     color: "#E8EDF3",
@@ -130,7 +133,39 @@ export default function ChatWidget() {
                     border: "1px solid rgba(255,255,255,0.07)",
                   }}
                 >
-                  {msg.content}
+                  {msg.role === "user" ? msg.content : (
+                    <ReactMarkdown
+                      remarkPlugins={[remarkGfm]}
+                      components={{
+                        p: ({ children }) => <p className="mb-2 last:mb-0">{children}</p>,
+                        strong: ({ children }) => <strong className="font-semibold text-white">{children}</strong>,
+                        em: ({ children }) => <em className="italic">{children}</em>,
+                        ol: ({ children }) => <ol className="list-decimal list-outside ml-4 mb-2 space-y-1">{children}</ol>,
+                        ul: ({ children }) => <ul className="list-disc list-outside ml-4 mb-2 space-y-1">{children}</ul>,
+                        li: ({ children }) => <li className="text-sm leading-relaxed">{children}</li>,
+                        a: ({ href, children }) => (
+                          <a
+                            href={href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="underline underline-offset-2 hover:opacity-80 transition-opacity"
+                            style={{ color: "#00BAB3" }}
+                          >
+                            {children}
+                          </a>
+                        ),
+                        code: ({ children }) => (
+                          <code className="px-1 py-0.5 rounded text-xs font-mono"
+                            style={{ background: "rgba(0,186,179,0.12)", color: "#00BAB3" }}>
+                            {children}
+                          </code>
+                        ),
+                        hr: () => <hr className="my-2 border-white/10" />,
+                      }}
+                    >
+                      {msg.content}
+                    </ReactMarkdown>
+                  )}
                 </div>
               </div>
             ))}
