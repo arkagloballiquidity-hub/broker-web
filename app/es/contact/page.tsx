@@ -11,9 +11,9 @@ export const metadata: Metadata = {
 const contactInfo = [
   {
     Icon: Mail,
-    label: "Email de Soporte",
-    value: "support@arkaltd.io",
-    href: "mailto:support@arkaltd.io",
+    label: "Email de Contacto",
+    value: "contacto@arkaltd.io",
+    href: "mailto:contacto@arkaltd.io",
   },
   {
     Icon: Clock,
@@ -117,7 +117,7 @@ export default function EsContactPage() {
               Enviar un Mensaje
             </h2>
             <form
-              action={`mailto:support@arkaltd.io`}
+              action={`mailto:contacto@arkaltd.io`}
               method="GET"
               className="space-y-5"
             >
@@ -208,10 +208,10 @@ export default function EsContactPage() {
               <p className="text-arka-gray text-xs text-center">
                 O escríbenos directamente a:{" "}
                 <a
-                  href="mailto:support@arkaltd.io"
+                  href="mailto:contacto@arkaltd.io"
                   className="text-arka-turquoise hover:text-arka-white transition-colors"
                 >
-                  support@arkaltd.io
+                  contacto@arkaltd.io
                 </a>
               </p>
             </form>

@@ -107,10 +107,10 @@ export default function FinalCTA() {
             className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-8"
             style={{ borderTop: "1px solid rgba(255,255,255,0.04)" }}
           >
-            <a href="mailto:support@arkaltd.io"
+            <a href="mailto:contacto@arkaltd.io"
               className="flex items-center gap-2 text-arka-gray hover:text-arka-white transition-colors text-sm">
               <Mail size={14} className="text-arka-turquoise" />
-              support@arkaltd.io
+              contacto@arkaltd.io
             </a>
             <span className="hidden sm:block w-px h-4 bg-arka-border" />
             <div className="flex items-center gap-2 text-arka-gray text-sm">

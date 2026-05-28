@@ -61,10 +61,10 @@ export default function Footer() {
               <div className="flex items-center gap-2 text-arka-gray text-xs">
                 <Mail size={12} className="text-arka-champagne shrink-0" />
                 <a
-                  href="mailto:support@arkaltd.io"
+                  href="mailto:contacto@arkaltd.io"
                   className="hover:text-arka-white transition-colors"
                 >
-                  support@arkaltd.io
+                  contacto@arkaltd.io
                 </a>
               </div>
             </div>

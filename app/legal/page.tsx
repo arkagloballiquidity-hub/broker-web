@@ -175,10 +175,10 @@ export default function LegalPage() {
             versions of all applicable policies. For questions about legal
             documents, contact{" "}
             <a
-              href="mailto:support@arkaltd.io"
+              href="mailto:contacto@arkaltd.io"
               className="text-arka-turquoise hover:text-arka-white transition-colors"
             >
-              support@arkaltd.io
+              contacto@arkaltd.io
             </a>
             .
           </p>
