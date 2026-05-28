@@ -1,4 +1,5 @@
 import HeroSection from "@/components/home/HeroSection";
+import TickerBanner from "@/components/layout/TickerBanner";
 import GlobalMarketsSection from "@/components/home/GlobalMarketsSection";
 import PlatformSection from "@/components/home/PlatformSection";
 import WhyArkaSection from "@/components/home/WhyArkaSection";
@@ -9,6 +10,7 @@ export default function HomePage() {
   return (
     <>
       <HeroSection />
+      <TickerBanner />
       <GlobalMarketsSection />
       <PlatformSection />
       <WhyArkaSection />

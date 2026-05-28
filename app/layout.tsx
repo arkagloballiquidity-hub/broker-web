@@ -3,7 +3,6 @@ import { Inter, JetBrains_Mono, Montserrat } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import TickerBanner from "@/components/layout/TickerBanner";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -57,7 +56,6 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${montserrat.variable} ${jetbrainsMono.variable}`}>
       <body className="bg-arka-black text-arka-white font-sans antialiased">
         <Header />
-        <TickerBanner />
         <main>{children}</main>
         <Footer />
       </body>
