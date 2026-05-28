@@ -68,16 +68,6 @@ function AccountCard({
         <div className="absolute top-0 left-0 right-0 h-px z-10"
           style={{ background: `linear-gradient(90deg, transparent, ${accent}60, transparent)` }} />
 
-        {/* Recommended badge */}
-        {popular && (
-          <div className="absolute top-3.5 right-3.5 z-20">
-            <span className="text-[9px] font-mono tracking-[0.18em] uppercase px-2 py-1 rounded-full"
-              style={{ background: `rgba(${rgb},0.15)`, border: `1px solid rgba(${rgb},0.3)`, color: accent }}>
-              {recommended}
-            </span>
-          </div>
-        )}
-
         <div className="relative z-10 flex flex-col h-full">
           {/* Icon + tag row */}
           <div className="flex items-center justify-between mb-4">
@@ -85,10 +75,18 @@ function AccountCard({
               style={{ background: `rgba(${rgb},0.08)`, border: `1px solid rgba(${rgb},0.18)` }}>
               <Icon size={18} style={{ color: accent }} />
             </div>
-            <span className="text-[9px] font-mono tracking-[0.14em] uppercase px-2 py-1 rounded-full"
-              style={{ color: accent, background: `rgba(${rgb},0.08)`, border: `1px solid rgba(${rgb},0.16)` }}>
-              {acc.name}
-            </span>
+            <div className="flex flex-col items-end gap-1">
+              {popular && (
+                <span className="text-[9px] font-mono tracking-[0.18em] uppercase px-2 py-0.5 rounded-full"
+                  style={{ background: `rgba(${rgb},0.15)`, border: `1px solid rgba(${rgb},0.3)`, color: accent }}>
+                  {recommended}
+                </span>
+              )}
+              <span className="text-[9px] font-mono tracking-[0.14em] uppercase px-2 py-0.5 rounded-full"
+                style={{ color: accent, background: `rgba(${rgb},0.08)`, border: `1px solid rgba(${rgb},0.16)` }}>
+                {acc.name}
+              </span>
+            </div>
           </div>
 
           {/* Tier */}
