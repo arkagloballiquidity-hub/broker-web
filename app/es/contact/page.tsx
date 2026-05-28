@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import SectionWrapper from "@/components/ui/SectionWrapper";
+import ContactForm from "@/components/contact/ContactForm";
 import { Mail, MapPin, Clock, Globe } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -35,16 +36,6 @@ const contactInfo = [
   },
 ];
 
-const inquiryTypes = [
-  { value: "account", label: "Apertura de Cuenta" },
-  { value: "platform", label: "Soporte de Plataforma" },
-  { value: "funding", label: "Depósitos y Retiros" },
-  { value: "compliance", label: "Cumplimiento y KYC" },
-  { value: "partner", label: "Programa de Partners / IB" },
-  { value: "technical", label: "Soporte Técnico" },
-  { value: "other", label: "Otro" },
-];
-
 export default function EsContactPage() {
   return (
     <>
@@ -57,8 +48,8 @@ export default function EsContactPage() {
             Contáctanos
           </h1>
           <p className="text-arka-gray text-xl max-w-2xl leading-relaxed">
-            Soporte 24 horas en español e inglés. Contáctanos para aperturas de
-            cuenta, preguntas sobre la plataforma, consultas de cumplimiento y
+            Soporte 24 horas en español e inglés. Contáctanos para apertura de
+            cuentas, preguntas sobre la plataforma, consultas de cumplimiento y
             solicitudes de partnership.
           </p>
         </div>
@@ -66,7 +57,7 @@ export default function EsContactPage() {
 
       <SectionWrapper dark>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-          {/* Contact info */}
+          {/* Información de contacto */}
           <div>
             <h2 className="text-2xl font-semibold text-arka-white mb-8">
               Información de Contacto
@@ -106,116 +97,13 @@ export default function EsContactPage() {
                 ARKA Global Liquidity LTD
               </p>
               <p className="text-arka-gray text-xs font-mono">
-                Registro No. 2025-00568 · Santa Lucía
+                Reg. No. 2025-00568 · Saint Lucia
               </p>
             </div>
           </div>
 
-          {/* Form */}
-          <div>
-            <h2 className="text-2xl font-semibold text-arka-white mb-8">
-              Enviar un Mensaje
-            </h2>
-            <form
-              action={`mailto:contacto@arkaltd.io`}
-              method="GET"
-              className="space-y-5"
-            >
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                <div>
-                  <label className="block text-arka-gray font-mono text-[10px] tracking-wider uppercase mb-2">
-                    Nombre Completo *
-                  </label>
-                  <input
-                    type="text"
-                    name="name"
-                    required
-                    placeholder="Juan García"
-                    className="w-full bg-arka-elevated border border-arka-border rounded px-4 py-3 text-arka-white text-sm placeholder:text-arka-gray/40 focus:outline-none focus:border-arka-turquoise/60 transition-colors"
-                  />
-                </div>
-                <div>
-                  <label className="block text-arka-gray font-mono text-[10px] tracking-wider uppercase mb-2">
-                    Correo Electrónico *
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    required
-                    placeholder="tu@ejemplo.com"
-                    className="w-full bg-arka-elevated border border-arka-border rounded px-4 py-3 text-arka-white text-sm placeholder:text-arka-gray/40 focus:outline-none focus:border-arka-turquoise/60 transition-colors"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-arka-gray font-mono text-[10px] tracking-wider uppercase mb-2">
-                  Tipo de Consulta
-                </label>
-                <select
-                  name="type"
-                  className="w-full bg-arka-elevated border border-arka-border rounded px-4 py-3 text-arka-white text-sm focus:outline-none focus:border-arka-turquoise/60 transition-colors appearance-none"
-                >
-                  {inquiryTypes.map(({ value, label }) => (
-                    <option key={value} value={value}>
-                      {label}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              <div>
-                <label className="block text-arka-gray font-mono text-[10px] tracking-wider uppercase mb-2">
-                  País de Residencia
-                </label>
-                <input
-                  type="text"
-                  name="country"
-                  placeholder="ej. Colombia, México, Argentina..."
-                  className="w-full bg-arka-elevated border border-arka-border rounded px-4 py-3 text-arka-white text-sm placeholder:text-arka-gray/40 focus:outline-none focus:border-arka-turquoise/60 transition-colors"
-                />
-              </div>
-
-              <div>
-                <label className="block text-arka-gray font-mono text-[10px] tracking-wider uppercase mb-2">
-                  Mensaje *
-                </label>
-                <textarea
-                  name="body"
-                  required
-                  rows={5}
-                  placeholder="Describe tu consulta..."
-                  className="w-full bg-arka-elevated border border-arka-border rounded px-4 py-3 text-arka-white text-sm placeholder:text-arka-gray/40 focus:outline-none focus:border-arka-turquoise/60 transition-colors resize-none"
-                />
-              </div>
-
-              <div className="bg-arka-midnight border border-arka-border rounded p-4">
-                <p className="text-arka-gray text-xs leading-relaxed">
-                  Al enviar este formulario confirmas que has leído la
-                  Advertencia de Riesgo y entiendes que el trading implica un
-                  riesgo significativo de pérdida. ARKA no acepta clientes de
-                  los Estados Unidos.
-                </p>
-              </div>
-
-              <button
-                type="submit"
-                className="w-full py-3.5 bg-arka-turquoise text-arka-black text-sm font-semibold rounded hover:bg-arka-turquoise/90 transition-colors"
-              >
-                Enviar Mensaje
-              </button>
-
-              <p className="text-arka-gray text-xs text-center">
-                O escríbenos directamente a:{" "}
-                <a
-                  href="mailto:contacto@arkaltd.io"
-                  className="text-arka-turquoise hover:text-arka-white transition-colors"
-                >
-                  contacto@arkaltd.io
-                </a>
-              </p>
-            </form>
-          </div>
+          {/* Formulario */}
+          <ContactForm lang="es" />
         </div>
       </SectionWrapper>
     </>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import SectionWrapper from "@/components/ui/SectionWrapper";
+import ContactForm from "@/components/contact/ContactForm";
 import { Mail, MapPin, Clock, Globe } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -33,16 +34,6 @@ const contactInfo = [
     value: "Ground Floor, La Place Creole Building, Rodney Village, Rodney Bay, Gros-Islet, St. Lucia",
     href: null,
   },
-];
-
-const inquiryTypes = [
-  { value: "account", label: "Account Opening" },
-  { value: "platform", label: "Platform Support" },
-  { value: "funding", label: "Funding & Withdrawals" },
-  { value: "compliance", label: "Compliance & KYC" },
-  { value: "partner", label: "Partnership / IB Program" },
-  { value: "technical", label: "Technical Support" },
-  { value: "other", label: "Other" },
 ];
 
 export default function ContactPage() {
@@ -112,110 +103,7 @@ export default function ContactPage() {
           </div>
 
           {/* Form */}
-          <div>
-            <h2 className="text-2xl font-semibold text-arka-white mb-8">
-              Send a Message
-            </h2>
-            <form
-              action={`mailto:contacto@arkaltd.io`}
-              method="GET"
-              className="space-y-5"
-            >
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                <div>
-                  <label className="block text-arka-gray font-mono text-[10px] tracking-wider uppercase mb-2">
-                    Full Name *
-                  </label>
-                  <input
-                    type="text"
-                    name="name"
-                    required
-                    placeholder="John Smith"
-                    className="w-full bg-arka-elevated border border-arka-border rounded px-4 py-3 text-arka-white text-sm placeholder:text-arka-gray/40 focus:outline-none focus:border-arka-turquoise/60 transition-colors"
-                  />
-                </div>
-                <div>
-                  <label className="block text-arka-gray font-mono text-[10px] tracking-wider uppercase mb-2">
-                    Email Address *
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    required
-                    placeholder="you@example.com"
-                    className="w-full bg-arka-elevated border border-arka-border rounded px-4 py-3 text-arka-white text-sm placeholder:text-arka-gray/40 focus:outline-none focus:border-arka-turquoise/60 transition-colors"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-arka-gray font-mono text-[10px] tracking-wider uppercase mb-2">
-                  Inquiry Type
-                </label>
-                <select
-                  name="type"
-                  className="w-full bg-arka-elevated border border-arka-border rounded px-4 py-3 text-arka-white text-sm focus:outline-none focus:border-arka-turquoise/60 transition-colors appearance-none"
-                >
-                  {inquiryTypes.map(({ value, label }) => (
-                    <option key={value} value={value}>
-                      {label}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              <div>
-                <label className="block text-arka-gray font-mono text-[10px] tracking-wider uppercase mb-2">
-                  Country of Residence
-                </label>
-                <input
-                  type="text"
-                  name="country"
-                  placeholder="e.g. Colombia, Brazil, UAE..."
-                  className="w-full bg-arka-elevated border border-arka-border rounded px-4 py-3 text-arka-white text-sm placeholder:text-arka-gray/40 focus:outline-none focus:border-arka-turquoise/60 transition-colors"
-                />
-              </div>
-
-              <div>
-                <label className="block text-arka-gray font-mono text-[10px] tracking-wider uppercase mb-2">
-                  Message *
-                </label>
-                <textarea
-                  name="body"
-                  required
-                  rows={5}
-                  placeholder="Describe your inquiry..."
-                  className="w-full bg-arka-elevated border border-arka-border rounded px-4 py-3 text-arka-white text-sm placeholder:text-arka-gray/40 focus:outline-none focus:border-arka-turquoise/60 transition-colors resize-none"
-                />
-              </div>
-
-              <div className="bg-arka-midnight border border-arka-border rounded p-4">
-                <p className="text-arka-gray text-xs leading-relaxed">
-                  By submitting this form you confirm that you have read the
-                  Risk Warning and understand that trading involves significant
-                  risk of loss. ARKA does not accept clients from the United
-                  States.
-                </p>
-              </div>
-
-              <button
-                type="submit"
-                className="w-full py-3.5 bg-arka-turquoise text-arka-black text-sm font-semibold rounded hover:bg-arka-turquoise/90 transition-colors"
-              >
-                Send Message
-              </button>
-
-              <p className="text-arka-gray text-xs text-center">
-                Or email directly:{" "}
-                <a
-                  href="mailto:contacto@arkaltd.io"
-                  className="text-arka-turquoise hover:text-arka-white transition-colors"
-                >
-                  contacto@arkaltd.io
-                </a>
-              </p>
-            </form>
-          </div>
+          <ContactForm lang="en" />
         </div>
       </SectionWrapper>
     </>
